@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Functions</title>
+    <link rel="stylesheet" href="jquery_functions.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            console.log("document is ready");
+
+            $('.level_one button').click(function() {
+                console.log("Add Class button clicked");
+                alert("You have clicked on Add Class!");
+                    $('.level_one p').addClass('red');
+            });
+
+            $('.level_two button').click(function() {
+                $('.level_two p').hide();
+            });
+
+            $('.level_three p').hide();
+            $('.level_three button').click(function() {
+                $('.level_three p').show();
+            });
+
+            $('.level_four button').click(function() {
+                $('.level_four p').toggle();
+            });
+
+            $('.level_five p').hide();
+            $('.level_five button').click(function() {
+                $('.level_five p').slideDown();
+            });
+
+// slideDown actually slides it up if it is hidden??
+// slideUp hides it by sliding it down??
+
+            $('.level_six button').click(function() {
+                $('.level_six p').slideUp();
+            });
+
+            $('.level_seven button').click(function() {
+                $('.level_seven p').slideToggle();
+            });
+
+            $('.level_eight button').click(function() {
+                $('.level_eight p').fadeOut();
+            });
+
+            $('.level_nine p').hide();
+            $('.level_nine button').click(function() {
+                $('.level_nine p').fadeIn();
+            });
+
+            $('.level_ten button').click(function() {
+                $('.level_ten h1').before('<h5>This h5 tag has been inserted into the HTML before the h1 tag.</h5>');
+            });
+
+            $('.level_eleven button').click(function() {
+                $('.level_eleven h1').after('<h5>This h5 tag has been inserted into the HTML after the h1 tag.</h5>');
+            });
+
+            $('.level_twelve button').click(function() {
+                $('.level_twelve p').append('. This is the second paragraph.');
+            });
+
+            $('.level_thirteen button').click(function() {
+                $('.level_thirteen p').html('<h6>This p tag has been replaced by an h6 tag.</h6>');
+            });
+
+            $('.level_fourteen button').click(function() {
+                $('.level_fourteen p').text('The source attributes of the images in the header have been changed.');
+                $('#header img').attr('src','chicken.png');
+            });
+
+            $('.level_fifteen button').click(function() {
+                $('#val_change').val('https://mylittlepony.hasbro.com/en-us');
+                $('level_fifteen p').text('the value of in the search field in the header has been changed (look above).');
+            });
+
+            $('.level_sixteen button').click(function() {
+                $('.level_sixteen p').text('The text of this paragraph has been changed.');
+            });
+
+        });
+    </script>
+
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <h2>My jQuery Basic Assignment!</h2>
+            <div>
+                <a href="xxxx"><img src="left_arrow.png" alt="right arrow"></a>
+                <a href="xxxx"><img src="right_arrow.png" alt="left arrow"></a>
+                <a href="xxxx"><img src="blue_x.png" alt="cancel"></a>
+                <a href="xxxx"><img src="house.png" alt="home"></a>
+                <form action="xxxxx">
+                    <input id="val_change" type="search" value="http://localhost/jQuery.html">
+                </form><!--end of form1-->
+                <form action="xxxxx">
+                    <input type="search" placeholder="&#128270;">
+                </form><!--end of form2-->
+            </div>
+        </div><!--end of header-->
+
+        <div class="sub_content level_one">
+            <h1>Add Class</h1>
+            <button class="button">Add Class</button>
+            <p>Click the button to add class "red" to this paragraph.</p>
+        </div><!--end of sub_content-->
+        <div class="border"></div>
+
+        <div class="sub_content level_fourteen">
+            <h1>Attr</h1>
+            <button class="button">Attr</button>
+            <p>Click the button to change the src attributes of the images in the header.</p>            
+        </div><!--end of sub_content-->
+        <div class="border"></div>
+
+        <div class="sub_content level_fifteen">
+            <h1>Val</h1>
+            <button class="button">Val</button>
+            <p>Click the button to change the value in the search field in the header</p>            
+        </div><!--end of sub_content-->
+        <div class="border"></div>
+
+        <div class="sub_content level_two">
+            <h1>Hide</h1>
+            <button class="button">Hide</button>
+            <p>Click the button to hide this paragraph</p>
+        </div><!--end of sub_content-->
+        <div class="border"></div>
+
+        <div class="sub_content level_three">
+            <h1>Show</h1>
+            <button class="button">Show</button>
+            <p>Click the button to show this paragraph</p>
+        </div><!--end of sub_content-->
+        <div class="border"></div>
+
+        <div class="sub_content level_four">
+            <h1>Toggle</h1>
+            <button class="button">Toggle</button>
+            <p>Click the button to toggle a hidden message</p>            
+        </div><!--end of sub_content-->
+        <div class="border"></div>
+
+        <div class="sub_content level_five">
+            <h1>Slide Down</h1>
+            <button class="button">Slide Down</button>
+            <p>Click the button to slide this paragraph down</p>            
+        </div><!--end of sub_content-->
+        <div class="border"></div>
+
+        <div class="sub_content level_six">
+            <h1>Slide Up</h1>
+            <button class="button">Slide Up</button>
+            <p>Click the button to slide this paragraph up</p>            
+        </div><!--end of sub_content-->
+        <div class="border"></div>
+
+        <div class="sub_content level_seven">
+            <h1>Slide Toggle</h1>
+            <button class="button">Slide Toggle</button>
+            <p>Click the button to slidetoggle a hidden message</p>            
+        </div><!--end of sub_content-->
+        <div class="border"></div>
+
+        <div class="sub_content level_eight">
+            <h1>Fade Out</h1>
+            <button class="button">Fade Out</button>
+            <p>Click the button to fade this paragraph in</p>          
+        </div><!--end of sub_content-->
+        <div class="border"></div>
+
+        <div class="sub_content level_nine">
+            <h1>Fade In</h1>
+            <button class="button">Fade In</button>
+            <p>Click the button to fade this paragraph out</p>            
+        </div><!--end of sub_content-->
+        <div class="border"></div>
+
+        <div class="sub_content level_ten">
+            <h1>Before</h1>
+            <button class="button">Before</button>
+            <p>Click the button to insert a new paragraph before the h1 tag.</p>            
+        </div><!--end of sub_content-->
+        <div class="border"></div>
+
+        <div class="sub_content level_eleven">
+            <h1>After</h1>
+            <button class="button">After</button>
+            <p>Click the button to insert a new paragraph into the HTML after the h1 tag.</p>            
+        </div><!--end of sub_content-->
+        <div class="border"></div>
+
+        <div class="sub_content level_twelve">
+            <h1>Append</h1>
+            <button class="button">Append</button>
+            <p>Click the button to append to this paragraph</p>            
+        </div><!--end of sub_content-->
+        <div class="border"></div>
+        <div class="sub_content level_thirteen">
+            <h1>Html</h1>
+            <button class="button">HTML</button>
+            <p>Click the button to change the html</p>            
+        </div><!--end of sub_content-->
+        <div class="border"></div>
+
+        <div class="sub_content level_sixteen">
+            <h1>Text</h1>
+            <button class="button">Text</button>
+            <p>Click the button to change the text of this paragraph</p>            
+        </div><!--end of sub_content-->
+    </div><!--end wrapper-->
+</body>
+</html>
